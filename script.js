@@ -1,21 +1,18 @@
-//your JS code here. If required.
 const outputField = document.querySelector("#output");
 
-function PromiseChaining(){
-    let display = new Promise((resolve, reject)=>{
+function PromiseChaining() {
+    new Promise((resolve, reject) => {
         setTimeout(() => {
-            let arr = [1,2,3,4];
+            let arr = [1, 2, 3, 4];
             resolve(arr);
-        }, 3000);
-    }).then((numbers)=>{
-        // Filter out the odd numbers
+        }, 1000);
+    }).then((numbers) => {
         let evenNumbers = numbers.filter(num => num % 2 === 0);
         outputField.textContent = evenNumbers.join(", ");
         return evenNumbers;
     }).then((evenNumbers) => {
-        // Multiply the even numbers by 2
-        let multipliedNumbers = evenNumbers.map(num => num * 2);
         setTimeout(() => {
+            let multipliedNumbers = evenNumbers.map(num => num * 2);
             outputField.textContent = multipliedNumbers.join(", ");
         }, 2000);
     });
