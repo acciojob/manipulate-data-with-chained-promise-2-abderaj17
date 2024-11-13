@@ -5,9 +5,13 @@ function manipulateData() {
     }, 3000);
   })
   .then(numbers => {
-    const evenNumbers = numbers.filter(num => num % 2 === 0);
-    document.getElementById('output').textContent = evenNumbers.join(", ");
-    return evenNumbers;
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const evenNumbers = numbers.filter(num => num % 2 === 0);
+        document.getElementById('output').textContent = evenNumbers.join(", ");
+        resolve(evenNumbers);
+      }, 1000);
+    });
   })
   .then(evenNumbers => {
     setTimeout(() => {
