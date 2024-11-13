@@ -2,7 +2,7 @@ function manipulateData() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve([1, 2, 3, 4]);
-    }, 1000);
+    }, 0);
   })
   .then(numbers => {
     return new Promise((resolve, reject) => {
@@ -17,7 +17,7 @@ function manipulateData() {
     setTimeout(() => {
       const multipliedNumbers = evenNumbers.map(num => num * 2);
       document.getElementById('output').textContent = multipliedNumbers.join(", ");
-    }, 1000);
+    }, 2000);
   });
 }
 
