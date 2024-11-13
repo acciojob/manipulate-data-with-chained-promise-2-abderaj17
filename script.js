@@ -8,7 +8,7 @@ function manipulateData() {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         const evenNumbers = numbers.filter(num => num % 2 === 0);
-        document.getElementById('output').textContent = evenNumbers.join(", ");
+        document.getElementById('output').textContent = evenNumbers.join(",");
         resolve(evenNumbers);
       }, 1000);
     });
@@ -16,7 +16,7 @@ function manipulateData() {
   .then(evenNumbers => {
     setTimeout(() => {
       const multipliedNumbers = evenNumbers.map(num => num * 2);
-      document.getElementById('output').textContent = multipliedNumbers.join(", ");
+      document.getElementById('output').textContent = multipliedNumbers.join(",");
     }, 2000);
   });
 }
